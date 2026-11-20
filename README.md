@@ -736,4 +736,318 @@ if (!found)
     Console.WriteLine("Пара не найдена");
 }
 ------
+13.
 
+PrintHeader();
+PrintHeader();
+Console.WriteLine("Основная часть программы");
+PrintFooter();
+
+void PrintHeader() {
+    Console.WriteLine("^_^");
+    Console.WriteLine("Лабораторная работа №13");
+    Console.WriteLine("Дата формирования отчёта");
+    Console.WriteLine("0_0");
+}
+
+void PrintFooter() {
+    Console.WriteLine(">_<");
+    Console.WriteLine("      Конец программы");
+    Console.WriteLine("X_X");
+}
+
+------
+void PrintStudentCard(string name, int age, string group) {
+    Console.WriteLine($"Студент: {name}, возраст: {age}, группа: {group}");
+}
+
+PrintStudentCard("Егор", 18, "ИС-21");
+PrintStudentCard("Валерия", 17, "ИС-22");
+------
+double CalculateScholarship(double baseAmount, double bonusPercent) {
+    return baseAmount + baseAmount * bonusPercent / 100;
+}
+
+bool IsEligibleForBonus(double averageGrade) {
+    return averageGrade >= 4.5;
+}
+
+double averageGrade = 4.6;
+double result;
+
+if (IsEligibleForBonus(averageGrade)) {
+    result = CalculateScholarship(2000, 15);
+} else {
+    result = CalculateScholarship(2000, 0);
+}
+
+Console.WriteLine(result);
+------
+double CalculateAverageGrade(int[] grades) {
+    int sum = 0;
+    foreach (int grade in grades) {
+        sum += grade;
+    }
+    return (double)sum / grades.Length;
+}
+
+int CountFives(int[] grades) {
+    int count = 0;
+    foreach (int grade in grades) {
+        if (grade == 5) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int[] grades = { 4, 5, 3, 5, 4 };
+double average = CalculateAverageGrade(grades);
+int fivesCount = CountFives(grades);
+
+Console.WriteLine($"Средний балл: {average}, количество пятёрок: {fivesCount}");
+------
+А.
+void PrintDivider() {
+    Console.WriteLine("--------------------------------");
+}
+
+Console.WriteLine("Первый блок текста");
+PrintDivider();
+Console.WriteLine("Второй блок текста");
+PrintDivider();
+Console.WriteLine("Третий блок текста");
+------
+Б.
+void PrintPerson(string name, int age) {
+    Console.WriteLine($"Имя: {name}, возраст: {age}");
+}
+
+PrintPerson("Алексей", 19);
+PrintPerson("Мария", 20);
+PrintPerson("Дмитрий", 18);
+------
+В.
+bool IsEven(int number) {
+    return number % 2 == 0;
+}
+
+int num = 16;
+
+if (IsEven(num)) {
+    Console.WriteLine($"Число {num} чётное");
+} else {
+    Console.WriteLine($"Число {num} нечётное");
+}
+------
+Г.
+int FindMax(int[] numbers) {
+    int max = numbers[0];
+    foreach (int num in numbers) {
+        if (num > max) {
+            max = num;
+        }
+    }
+    return max;
+}
+
+int[] values = { 7, 19, 3, 25, 11 };
+Console.WriteLine($"Максимальное число: {FindMax(values)}");
+------
+9)
+bool ContainsValue(int[] numbers, int target) {
+    foreach (int num in numbers) {
+        if (num == target) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int[] numbers = { 12, 45, 7, 23, 89 };
+int target = 23;
+
+Console.WriteLine(ContainsValue(numbers, target) ? "Значение найдено" : "Значение не найдено");
+------
+16.
+
+Console.Write("Сколько студентов в группе? ");
+int studentsCount = int.Parse(Console.ReadLine());
+int[] grades = new int[studentsCount];
+
+for (int i = 0; i < grades.Length; i++) {
+    Console.Write($"Оценка студента {i + 1}: ");
+    grades[i] = int.Parse(Console.ReadLine());
+}
+
+int sum = 0;
+foreach (int grade in grades) {
+    Console.WriteLine(grade);
+    sum += grade;
+}
+
+double average = (double)sum / grades.Length;
+Console.WriteLine($"Средний балл группы: {average}");
+------
+int[] points = { 4, 7, 2, 9, 5 };
+
+for (int i = 0; i < points.Length; i++) {
+    if (points[i] < 10) {
+        points[i] = points[i] + 1;
+    }
+}
+
+foreach (int point in points) {
+    Console.WriteLine(point);
+}
+------
+int[] grades = { 4, 5, 3, 5, 4, 2 };
+
+for (int i = 0; i < grades.Length - 1; i++) {
+    for (int j = 0; j < grades.Length - 1 - i; j++) {
+        if (grades[j] < grades[j + 1]) {
+            int temp = grades[j];
+            grades[j] = grades[j + 1];
+            grades[j + 1] = temp;
+        }
+    }
+}
+
+foreach (int grade in grades) {
+    Console.WriteLine(grade);
+}
+------
+int[] GenerateScheduleSlots(int lessonsCount) {
+    int[] slots = new int[lessonsCount];
+
+    for (int i = 0; i < lessonsCount; i++) {
+        slots[i] = i + 1;
+    }
+
+    return slots;
+}
+
+int[] GenerateEvenSlots(int lessonsCount) {
+    int[] slots = new int[lessonsCount];
+
+    for (int i = 0; i < lessonsCount; i++) {
+        slots[i] = (i + 1) * 2;
+    }
+
+    return slots;
+}
+
+int[] evenSlots = GenerateEvenSlots(6);
+
+foreach (int slot in evenSlots) {
+    Console.WriteLine(slot);
+}
+------
+А.
+Console.Write("Введите число N: ");
+int n = int.Parse(Console.ReadLine());
+int[] squares = new int[n];
+
+for (int i = 0; i < n; i++) {
+    squares[i] = (i + 1) * (i + 1);
+}
+
+foreach (int num in squares) {
+    Console.WriteLine(num);
+}
+------
+Б.
+int[] numbers = { 4, -7, 2, -9, 5, -1 };
+
+for (int i = 0; i < numbers.Length; i++) {
+    if (numbers[i] < 0) {
+        numbers[i] = 0;
+    }
+}
+
+foreach (int num in numbers) {
+    Console.WriteLine(num);
+}
+------
+В.
+int[] numbers = { 5, 2, 8, 1, 9 };
+
+for (int i = 0; i < numbers.Length - 1; i++) {
+    for (int j = 0; j < numbers.Length - 1 - i; j++) {
+        if (numbers[j] < numbers[j + 1]) {
+            int temp = numbers[j];
+            numbers[j] = numbers[j + 1];
+            numbers[j + 1] = temp;
+        }
+    }
+}
+
+foreach (int num in numbers) {
+    Console.WriteLine(num);
+}
+------
+Г.
+int[] GenerateEvenNumbers(int n) {
+    int count = n / 2;
+    int[] evens = new int[count];
+    int index = 0;
+
+    for (int i = 2; i <= n; i += 2) {
+        evens[index] = i;
+        index++;
+    }
+
+    return evens;
+}
+
+int[] evenArray = GenerateEvenNumbers(10);
+
+foreach (int num in evenArray) {
+    Console.WriteLine(num);
+}
+------
+9)
+int[] MergeArrays(int[] first, int[] second) {
+    int[] merged = new int[first.Length + second.Length];
+
+    for (int i = 0; i < first.Length; i++) {
+        merged[i] = first[i];
+    }
+
+    for (int i = 0; i < second.Length; i++) {
+        merged[first.Length + i] = second[i];
+    }
+
+    return merged;
+}
+
+int[] arr1 = { 1, 2, 3 };
+int[] arr2 = { 4, 5, 6, 7 };
+int[] result = MergeArrays(arr1, arr2);
+
+foreach (int num in result) {
+    Console.WriteLine(num);
+}
+------
+(доп.)
+string[] names = { "Аня", "Борис", "Вика", "Дима", "Егор" };
+int[] scores = { 78, 95, 84, 62, 91 };
+
+for (int i = 0; i < scores.Length - 1; i++) {
+    for (int j = 0; j < scores.Length - 1 - i; j++) {
+        if (scores[j] < scores[j + 1]) {
+            int tempScore = scores[j];
+            scores[j] = scores[j + 1];
+            scores[j + 1] = tempScore;
+
+            string tempName = names[j];
+            names[j] = names[j + 1];
+            names[j + 1] = tempName;
+        }
+    }
+}
+
+for (int i = 0; i < names.Length; i++) {
+    Console.WriteLine($"{i + 1}. {names[i]} — {scores[i]}");
+}
+------
